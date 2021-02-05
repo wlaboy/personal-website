@@ -50,3 +50,12 @@
 .lightText {
   color: #666;
 }
+
+.socialMediaIcons {
+  display: flex;
+  justify-content: center;
+}
+
+.socialMediaIcon {
+  margin-left: 2rem;
+}
