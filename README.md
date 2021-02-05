@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# WilsonLaboy.dev
+
+This repo holds my website which displays my portfolio. It was created using the Next.js framework with React.
