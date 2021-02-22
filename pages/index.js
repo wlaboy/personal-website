@@ -24,10 +24,6 @@ export default function Home({ allPostsData }) {
         <p>Hi, I'm Wilson. I'm a self-taught web developer.</p>
         <p>
           Find me on{" "}
-          <Link href="https://www.twitter.com/wjlaboy" target="_blank">
-            <a>Twitter</a>
-          </Link>
-          {", "}
           <Link href="https://www.github.com/wlaboy">
             <a>GitHub</a>
           </Link>
