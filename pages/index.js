@@ -1,27 +1,37 @@
 import Head from "next/head";
 import Link from "next/link";
-import Layout, { siteTitle } from "../components/layout";
+import Image from "next/image";
 import utilStyles from "../styles/utils.module.css";
-import { getSortedPostsData } from "../lib/posts";
 
-export async function getStaticProps() {
-  const allPostsData = getSortedPostsData();
-  return {
-    props: {
-      allPostsData,
-    },
-  };
-}
+const name = "Wilson Laboy";
 
-export default function Home({ allPostsData }) {
+export default function Home() {
   return (
-    <Layout home>
+    <div className={utilStyles.container}>
       <Head>
-        <title>{siteTitle}</title>
+        <link rel="icon" href="/favicon.ico" />
+        <title>WilsonLaboy.dev</title>
       </Head>
 
+      <header className={utilStyles.header}>
+        <Image
+          priority
+          src="/images/drawing.png"
+          className={utilStyles.borderCircle}
+          height={144}
+          width={144}
+          alt={name}
+        />
+        <h1 className={utilStyles.heading2Xl}>{name}</h1>
+      </header>
+
       <section className={utilStyles.headingMd}>
-        <p>Hi, I'm Wilson. I'm a self-taught developer with a focus on web development.</p>
+        <p>Hi, I'm Wilson.</p>
+        <p>
+          I am a self-taught software developer with a focus on web development.
+          I have experience with C# and .NET, Angular, Node.js, React.js, and
+          Vue.js.
+        </p>
         <p>
           Find me on{" "}
           <Link href="https://www.github.com/wlaboy">
@@ -37,19 +47,6 @@ export default function Home({ allPostsData }) {
           </Link>
         </p>
       </section>
-
-      <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-        <h2 className={utilStyles.headingLg}>Projects</h2>
-        <ul className={utilStyles.list}>
-          {allPostsData.map(({ id, title }) => (
-            <li className={utilStyles.listItem} key={id}>
-              <Link href={`/posts/${id}`}>
-                <a>{title}</a>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </Layout>
+    </div>
   );
 }
